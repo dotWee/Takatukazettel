@@ -1,28 +1,16 @@
-let ITEMS = new Map();
-ITEMS.set(
-    '9780201485677', {
-        id: '9780201485677',
-        title: 'Refactoring: Improving the Design of Existing Code',
-        user: 'Martin Fowler'
-    }
-);
-ITEMS.set(
-    '9780132350884', {
-        id: '9780132350884',
-        title: 'Clean Code: A Handitem of Agile Software Craftsmanship',
-        user: 'Robert C. Martin'
-    }
-);
-ITEMS.set(
-    '9780321356680', {
-        id: '9780321356680',
-        title: 'Effective Java',
-        user: 'Joshua Bloch'
-    }
-);
+var Zettel = require('../helpers/zettel');
 
 function items(request, response) {
-    response.json(Array.from(ITEMS.values()));
+    Zettel.find(function (err, items) {
+
+        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+        if (err) {
+            res.send(err);
+    }
+
+        // return all items as json
+        res.json(items); 
+    });
 }
 
 function find(request, response) {
