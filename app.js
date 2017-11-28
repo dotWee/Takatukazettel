@@ -1,16 +1,27 @@
 'use strict';
 
+// dependencies
 var SwaggerExpress = require('swagger-express-mw');
+var mongoose = require('mongoose');
 var pug = require('pug');
-
 var app = require('express')();
-app.set("view engine", "pug");
-module.exports = app; // for testing
+var database = require('./config/database'); 
 
+// set view engine
+app.set("view engine", "pug");
+
+// for testing
+module.exports = app; 
+
+// required config
 var config = {
-  appRoot: __dirname // required config
+  appRoot: __dirname 
 };
 
+// connect to database
+mongoose.connect(database.localUrl);
+
+// setup swagger
 SwaggerExpress.create(config, function (err, swaggerExpress) {
   if (err) {
     throw err;
