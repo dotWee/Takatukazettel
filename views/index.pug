@@ -1,0 +1,94 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Takatukazettel
+    // Bootstrap core
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js', integrity='sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js', integrity='sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ', crossorigin='anonymous')
+    // Custom styles
+    style.
+      .table>tbody>tr>td,
+      .table>tbody>tr>th {
+      vertical-align: middle;
+      }
+  body
+    // Navbar
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='#') Takatukazettel
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href='#')
+              | Home
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Features
+          li.nav-item
+            a.nav-link(href='#') About
+    .container
+      .row.align-items-center
+        // Set users name
+        .col-sm-8.mt-3
+          .card
+            .card-body
+              .row
+                .col
+                  h4.card-title Set user
+                .col-auto
+                  button.btn.btn-outline-secondary(type='button', href='#') Save
+              .row
+                .col
+                  .form-group
+                    label(for='inputUser') Your name
+                    input#inputUser.form-control(type='text', aria-describedby='usernameHelp', placeholder='Name')
+      .row.align-items-center
+        // Per user content
+        .col-sm-4.mt-3
+          .card
+            .card-body
+              .row
+                .col
+                  h4.card-title {user}'s items
+                .col-auto
+                  button.btn.btn-outline-success(type='button', href='#') Alle Erledigt
+            table.table.h-100.m-0
+              thead
+                tr
+                  th(scope='col') #
+                  th(scope='col') Title
+                  th(scope='col')
+              tbody
+                tr
+                  th(scope='row') 1
+                  td {item->title}
+                  td
+                    button.btn.btn-success.float-right(type='button') Erledigt
+        // All items content
+        .col-sm-4.mt-3
+          .card
+            .card-body
+              .row
+                .col
+                  h4.card-title All items
+                .col-auto
+                  button.btn.btn-outline-success(type='button', href='#') Alle Erledigt
+            table.table.h-100.m-0
+              thead
+                tr
+                  th(scope='col') #
+                  th(scope='col') Title
+                  th(scope='col')
+              tbody
+                tr
+                  th(scope='row') 1
+                  td {item->title}
+                  td
+                    button.btn.btn-success.float-right(type='button') Erledigt

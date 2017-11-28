@@ -1,15 +1,20 @@
 'use strict';
 
 var SwaggerExpress = require('swagger-express-mw');
+var pug = require('pug');
+
 var app = require('express')();
+app.set("view engine", "pug");
 module.exports = app; // for testing
 
 var config = {
   appRoot: __dirname // required config
 };
 
-SwaggerExpress.create(config, function(err, swaggerExpress) {
-  if (err) { throw err; }
+SwaggerExpress.create(config, function (err, swaggerExpress) {
+  if (err) {
+    throw err;
+  }
 
   // install middleware
   swaggerExpress.register(app);
@@ -19,9 +24,9 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
 
   if (swaggerExpress.runner.swagger.paths['/items']) {
     console.log('try this:\ncurl http://127.0.0.1:' + port + '/items');
-  } 
+  }
 
   app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/views/index.html');
+    res.render('index.pug');
   });
 });
