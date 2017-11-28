@@ -54,101 +54,108 @@
         </div>
     </nav>
 
-    <!-- Set users name -->
-    <div class="cointainer m-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h4 class="card-title">Set user</h4>
-                    </div>
+    <div class="container">
 
-                    <div class="col-auto">
-                        <button type="button" href="#" class="btn btn-outline-secondary">Save</button>
-                    </div>
-                </div>
+        <div class="row align-items-center">
+            <!-- Set users name -->
+            <div class="col-sm-8 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="card-title">Set user</h4>
+                            </div>
 
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="inputUser">Your name</label>
-                            <input type="text" class="form-control" id="inputUser" aria-describedby="usernameHelp" placeholder="Name">
+                            <div class="col-auto">
+                                <button type="button" href="#" class="btn btn-outline-secondary">Save</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="inputUser">Your name</label>
+                                    <input type="text" class="form-control" id="inputUser" aria-describedby="usernameHelp" placeholder="Name">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Per user content -->
-    <div class="cointainer m-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h4 class="card-title">{user}'s items</h4>
+        <div class="row align-items-center">
+            <!-- Per user content -->
+            <div class="col-sm-4 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="card-title">{user}'s items</h4>
+                            </div>
+
+                            <div class="col-auto">
+                                <button type="button" href="#" class="btn btn-outline-success">Alle Erledigt</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-auto">
-                        <button type="button" href="#" class="btn btn-outline-success">Alle Erledigt</button>
-                    </div>
+                    <table class="table h-100 m-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{item->title}</td>
+                                <td>
+                                    <button type="button" class="btn btn-success float-right">Erledigt</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
-            <table class="table h-100 m-0">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>{item->title}</td>
-                        <td>
-                            <button type="button" class="btn btn-success float-right">Erledigt</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+            <!-- All items content -->
+            <div class="col-sm-4 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="card-title">All items</h4>
+                            </div>
 
-    <!-- All items content -->
-    <div class="cointainer m-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h4 class="card-title">All items</h4>
+                            <div class="col-auto">
+                                <button type="button" href="#" class="btn btn-outline-success">Alle Erledigt</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-auto">
-                        <button type="button" href="#" class="btn btn-outline-success">Alle Erledigt</button>
-                    </div>
+                    <table class="table h-100 m-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{item->title}</td>
+                                <td>
+                                    <button type="button" class="btn btn-success float-right">Erledigt</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
-            <table class="table h-100 m-0">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>{item->title}</td>
-                        <td>
-                            <button type="button" class="btn btn-success float-right">Erledigt</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
 </body>
