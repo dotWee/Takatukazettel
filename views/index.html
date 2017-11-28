@@ -30,6 +30,127 @@
 
 <body>
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Takatukazettel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Set users name -->
+    <div class="cointainer m-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Set user</h4>
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="button" href="#" class="btn btn-outline-secondary">Save</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="inputUser">Your name</label>
+                            <input type="text" class="form-control" id="inputUser" aria-describedby="usernameHelp" placeholder="Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Per user content -->
+    <div class="cointainer m-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">{user}'s items</h4>
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="button" href="#" class="btn btn-outline-success">Alle Erledigt</button>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table h-100 m-0">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{item->title}</td>
+                        <td>
+                            <button type="button" class="btn btn-success float-right">Erledigt</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- All items content -->
+    <div class="cointainer m-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">All items</h4>
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="button" href="#" class="btn btn-outline-success">Alle Erledigt</button>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table h-100 m-0">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{item->title}</td>
+                        <td>
+                            <button type="button" class="btn btn-success float-right">Erledigt</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 
 </html>
