@@ -3,21 +3,21 @@ ITEMS.set(
     '9780201485677', {
         id: '9780201485677',
         title: 'Refactoring: Improving the Design of Existing Code',
-        creator: 'Martin Fowler'
+        user: 'Martin Fowler'
     }
 );
 ITEMS.set(
     '9780132350884', {
         id: '9780132350884',
         title: 'Clean Code: A Handitem of Agile Software Craftsmanship',
-        creator: 'Robert C. Martin'
+        user: 'Robert C. Martin'
     }
 );
 ITEMS.set(
     '9780321356680', {
         id: '9780321356680',
         title: 'Effective Java',
-        creator: 'Joshua Bloch'
+        user: 'Joshua Bloch'
     }
 );
 

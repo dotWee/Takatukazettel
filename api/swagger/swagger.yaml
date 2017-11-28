@@ -26,9 +26,9 @@ paths:
       # used as the method name of the controller
       operationId: items
       parameters:
-        - name: creator
+        - name: user
           in: query
-          description: Only return items by a specific creator
+          description: Only return items by a specific user
           required: false
           type: string
       responses:
@@ -141,9 +141,9 @@ definitions:
       title:
         type: string
         description: Title of the item
-      creator:
+      user:
         type: string
-        description: Creator of the item
+        description: User of the item
   Items:
     type: array
     items:

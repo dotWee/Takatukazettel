@@ -24,7 +24,7 @@ describe('controllers', () => {
         const expectedItem = {
           id: '9780201485677',
           title: 'Refactoring: Improving the Design of Existing Code',
-          creator: 'Martin Fowler'
+          user: 'Martin Fowler'
         }
         request(server)
           .get(`/items/${expectedItem.id}`)
@@ -35,7 +35,7 @@ describe('controllers', () => {
             should.not.exist(error);
             response.body.id.should.be.equal(expectedItem.id);
             response.body.title.should.be.equal(expectedItem.title);
-            response.body.creator.should.be.equal(expectedItem.creator);
+            response.body.user.should.be.equal(expectedItem.user);
             done();
           });
       });
