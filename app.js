@@ -19,5 +19,9 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
 
   if (swaggerExpress.runner.swagger.paths['/items']) {
     console.log('try this:\ncurl http://127.0.0.1:' + port + '/items');
-  }
+  } 
+
+  app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/views/index.html');
+  });
 });
