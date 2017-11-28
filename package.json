@@ -9,7 +9,7 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.12.3",
-    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.5",
     "pug": "^2.0.0-rc.4",
     "swagger-express-mw": "^0.1.0"
   },
