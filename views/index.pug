@@ -13,15 +13,15 @@ block append js
     script(src='/public/js/index.ko.js')
 
 block append content
-    // Set users name
+    // Creation card
     .col-lg-4.col-sm-4.mt-3
         .card.border-primary
             .card-body
                 form(data-bind='submit: addItem')
                     .row
                         .col
-                            h4.card-title Set user
-                        .col-auto
+                            h4.card-title New item
+                        .col-auto.d-none.d-sm-none.d-md-block
                             button.btn.btn-outline-primary(type='submit') Save
                     .row
                         .col
@@ -33,8 +33,11 @@ block append content
                             .form-group.mb-0
                                 label(for='inputTitle') New item
                                 input#inputTitle.form-control(type='text', placeholder='Item title', data-bind='value: currentItem().title')
+                    .row.d-block.d-sm-block.d-md-none.mt-3
+                        .col
+                            button.btn.btn-outline-primary.w-100(type='submit') Save                            
     
-    // All items content
+    // All items card
     .col-lg-8.col-sm-8.mt-3
         .card
             .card-body
