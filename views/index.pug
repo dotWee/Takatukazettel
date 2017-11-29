@@ -38,10 +38,12 @@ block append content
                     tr
                         th(scope='col') #
                         th(scope='col') Title
+                        th(scope='col') User
                         th(scope='col')
                 tbody
                     tr
                         th(scope='row') 1
                         td {item->title}
+                        td {item->user}
                         td
                             button.btn.btn-success.float-right(type='button') Erledigt
