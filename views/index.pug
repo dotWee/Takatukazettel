@@ -24,28 +24,6 @@ block append content
                             label(for='inputUser') Your name
                             input#inputUser.form-control(type='text', aria-describedby='usernameHelp', placeholder='Name')
     
-    // Per user content
-    .col-lg-4.col-sm-6.mt-3
-        .card
-            .card-body
-                .row
-                    .col
-                        h4.card-title {user}'s items
-                    .col-auto
-                        button.btn.btn-outline-success(type='button', href='#') Alle Erledigt
-            table.table.h-100.m-0
-                thead
-                    tr
-                        th(scope='col') #
-                        th(scope='col') Title
-                        th(scope='col')
-                tbody
-                    tr
-                        th(scope='row') 1
-                        td {item->title}
-                        td
-                            button.btn.btn-success.float-right(type='button') Erledigt
-    
     // All items content
     .col-lg-4.col-sm-6.mt-3
         .card
