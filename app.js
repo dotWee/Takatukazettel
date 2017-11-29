@@ -4,11 +4,15 @@
 var SwaggerExpress = require('swagger-express-mw');
 var mongoose = require('mongoose');
 var pug = require('pug');
-var app = require('express')();
+var express = require('express');
+var app = express();
 var database = require('./config/database'); 
 
 // set view engine
 app.set("view engine", "pug");
+
+// enable bower
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 // for testing
 module.exports = app; 
