@@ -30,7 +30,7 @@ block append content
                                 input#inputUser.form-control(type='text', placeholder='User name', data-bind='value: currentItem().user')
                     .row
                         .col
-                            .form-group
+                            .form-group.mb-0
                                 label(for='inputTitle') New item
                                 input#inputTitle.form-control(type='text', placeholder='Item title', data-bind='value: currentItem().title')
     
@@ -46,14 +46,21 @@ block append content
             table.table.table-hover.h-100.m-0
                 thead
                     tr
-                        th(scope='col') #
-                        th(scope='col') Title
-                        th(scope='col') User
+                        th(scope='col') 
+                            .m-2 #
+                        th(scope='col') 
+                            .m-2 Title
+                        th(scope='col') 
+                            .m-2 User
                         th(scope='col')
+                            .m-2 
                 tbody(data-bind='foreach: items')
                     tr
-                        th(data-bind='text: $index')
-                        td(data-bind='text: title')
-                        td(data-bind='text: user')
+                        th
+                            .m-2(data-bind='text: $index')
                         td
-                            button.btn.btn-success.float-right(type='button', data-bind='click: $parent.removeItem') Done
+                            .m-2(data-bind='text: title')
+                        td
+                            .m-2(data-bind='text: user')
+                        td
+                            button.btn.btn-success.m-2.float-right(type='button', data-bind='click: $parent.removeItem') Done
