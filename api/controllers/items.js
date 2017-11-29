@@ -1,32 +1,39 @@
-var Zettel = require('../helpers/zettel');
+var mongoose = require('mongoose');
+
+var itemSchema = mongoose.Schema({
+    title: String,
+    user: String,
+});
+
+var Item = mongoose.model('Item', itemSchema);
 
 function items(request, response) {
-  Zettel.find(function (err, items) {
+  Item.find(function (err, items) {
 
-    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    // if there is an error retrieving, send the error. nothing after response.send(err) will execute
     if (err) {
-      res.send(err);
+      response.send(err);
     }
 
     // return all items as json
-    res.json(items);
+    response.json(items);
   });
 }
 
 function find(request, response) {
   const id = request.swagger.params.id.value;
 
-  Zettel.findOne({
+  Item.findOne({
     _id: id
   }, function (err, item) {
 
-    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    // if there is an error retrieving, send the error. nothing after response.send(err) will execute
     if (err) {
-      res.send(err);
+      response.send(err);
     }
 
     // return item as json
-    res.json(item);
+    response.json(item);
   });
 }
 
@@ -41,30 +48,35 @@ function save(request, response) {
       console.log(err);
     } else {
       console.log('saved item with title ' + item.title);
+      response.json({
+        success: 1,
+        description: 'Item saved',
+      });
     }
-  });
-
-  response.json({
-    success: 1,
-    description: 'Item saved',
   });
 }
 
 function update(request, response) {
   const id = request.swagger.params.id.value;
 
-  Zettel.findOne({
+  Item.findOne({
     _id: id
   }, function (err, item) {
 
-    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    // if there is an error retrieving, send the error. nothing after response.send(err) will execute
     if (err) {
-      res.status(204).send(err);
+      response.status(204).send(err);
     }
 
     // update item
-    item.title = request.body.title;
-    item.title = request.body.user;
+    if(request.body.title !== null && request.body.title !== '') {
+      item.set({ title: request.body.title });
+    }
+
+    if(request.body.user !== null && request.body.user !== '') {
+      item.set({ user: request.body.user });
+    }
+    
     item.save(function (err, item) {
       if (err) {
         console.log(err);
@@ -83,15 +95,14 @@ function update(request, response) {
 
 function remove(request, response) {
   const id = request.swagger.params.id.value;
-  const deleted = ITEMS.delete(id);
-  if (deleted) {
-    response.json({
+
+  Item.remove({ _id: id }, function (err) {
+    if (err) response.status(204).send(err);
+    else response.json({
       success: 1,
       description: 'Item deleted',
     });
-  } else {
-    response.status(204).send();
-  }
+  });
 }
 
 module.exports = {

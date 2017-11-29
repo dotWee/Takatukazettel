@@ -39,7 +39,7 @@ SwaggerExpress.create(config, function (err, swaggerExpress) {
   app.listen(port);
 
   if (swaggerExpress.runner.swagger.paths['/items']) {
-    console.log('try this:\ncurl http://127.0.0.1:' + port + '/items');
+    console.log('try this:\ncurl http://localhost:' + port + '/items');
   }
 
   app.get('/', function(req, res) {
