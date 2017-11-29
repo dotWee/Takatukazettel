@@ -34,9 +34,10 @@ html(lang='en')
           li.nav-item
             a.nav-link(href='#') About
     .container
-      .row.align-items-center
+      .row.align-items-start
+        
         // Set users name
-        .col-sm-8.mt-3
+        .col-lg-4.col-sm-6.mt-3
           .card
             .card-body
               .row
@@ -49,9 +50,9 @@ html(lang='en')
                   .form-group
                     label(for='inputUser') Your name
                     input#inputUser.form-control(type='text', aria-describedby='usernameHelp', placeholder='Name')
-      .row.align-items-center
+        
         // Per user content
-        .col-sm-4.mt-3
+        .col-lg-4.col-sm-6.mt-3
           .card
             .card-body
               .row
@@ -71,8 +72,9 @@ html(lang='en')
                   td {item->title}
                   td
                     button.btn.btn-success.float-right(type='button') Erledigt
+        
         // All items content
-        .col-sm-4.mt-3
+        .col-lg-4.col-sm-6.mt-3
           .card
             .card-body
               .row
