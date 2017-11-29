@@ -64,3 +64,5 @@ block append content
                             .m-2(data-bind='text: user')
                         td
                             button.btn.btn-success.m-2.float-right(type='button', data-bind='click: $parent.removeItem') Done
+            .card-footer
+                a(href='#', data-bind='click: refreshList()') Refresh
