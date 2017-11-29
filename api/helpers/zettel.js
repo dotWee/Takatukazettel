@@ -1,12 +1,6 @@
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('Item', {
-    title: {
-        type: String,
-        default: ''
-    },
-    user: {
-        type: String,
-        default: ''
-    }
+var Item = mongoose.model('Item', {
+    title: String,
+    user: String,
 });

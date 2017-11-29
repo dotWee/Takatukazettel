@@ -20,6 +20,11 @@ var config = {
 
 // connect to database
 mongoose.connect(database.localUrl);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('connected to database');
+});
 
 // setup swagger
 SwaggerExpress.create(config, function (err, swaggerExpress) {
@@ -30,14 +35,14 @@ SwaggerExpress.create(config, function (err, swaggerExpress) {
   // install middleware
   swaggerExpress.register(app);
 
-  var port = process.env.PORT || 10010;
+  let port = process.env.PORT || 10010;
   app.listen(port);
 
   if (swaggerExpress.runner.swagger.paths['/items']) {
     console.log('try this:\ncurl http://127.0.0.1:' + port + '/items');
   }
 
-  app.get('/', function (req, res) {
+  app.get('/', function(req, res) {
     res.render('index.pug');
   });
 });
