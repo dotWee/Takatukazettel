@@ -17,21 +17,22 @@ block append content
     .col-lg-4.col-sm-4.mt-3
         .card
             .card-body
-                .row
-                    .col
-                        h4.card-title Set user
-                    .col-auto
-                        button.btn.btn-outline-primary(type='button', href='#') Save
-                .row
-                    .col
-                        .form-group
-                            label(for='inputUser') Your name
-                            input#inputUser.form-control(type='text', placeholder='User name')
-                .row
-                    .col
-                        .form-group
-                            label(for='inputTitle') New item
-                            input#inputTitle.form-control(type='text', placeholder='Item title')
+                form(data-bind='submit: addItem')
+                    .row
+                        .col
+                            h4.card-title Set user
+                        .col-auto
+                            button.btn.btn-outline-primary(type='submit') Save
+                    .row
+                        .col
+                            .form-group
+                                label(for='inputUser') Your name
+                                input#inputUser.form-control(type='text', placeholder='User name', data-bind='value: currentItem().user')
+                    .row
+                        .col
+                            .form-group
+                                label(for='inputTitle') New item
+                                input#inputTitle.form-control(type='text', placeholder='Item title', data-bind='value: currentItem().title')
     
     // All items content
     .col-lg-8.col-sm-8.mt-3
@@ -50,9 +51,9 @@ block append content
                         th(scope='col') User
                         th(scope='col')
                 tbody
-                    tr
-                        th(scope='row') 1
-                        td {item->title}
-                        td {item->user}
+                    tr(data-bind='foreach: items')
+                        th(data-bind='text: $index')
+                        td(data-bind='text: title')
+                        td(data-bind='text: user')
                         td
-                            button.btn.btn-success.float-right(type='button') Erledigt
+                            button.btn.btn-success.float-right(type='button', data-bind='click: $parent.removeItem') Erledigt
