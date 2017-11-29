@@ -12,6 +12,7 @@ var database = require('./config/database');
 app.set("view engine", "pug");
 
 // enable bower
+app.use('/public',  express.static(__dirname + '/public'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 // for testing
