@@ -35,14 +35,14 @@ function IndexModel() {
                 self.items.push(new ItemModel(element));
             }, this);
 
-            console.log("Loaded " + self.items().length + " into the view");
+            console.log("Loaded " + self.items().length + " items into the view");
             ko.applyBindings(self);
         });
         xreq.open("GET", endpoint + endpointParam);
         xreq.setRequestHeader("Content-type", "application/json");
         xreq.send();
     };
-    
+
     self.refreshList();
 
     self.addItem = function () {
@@ -55,6 +55,18 @@ function IndexModel() {
         xreq.open("POST", endpoint);
         xreq.setRequestHeader("Content-type", "application/json");
         xreq.send(ko.toJSON(self.currentItem));
+    };
+
+    self.removeItem = function (item) {
+        console.log("Delete item with id " + item._id());
+        var xreq = new XMLHttpRequest();
+        
+        xreq.addEventListener("load", function (data) {
+            self.items.destroy(item);
+        });
+        xreq.open("DELETE", endpoint + "/" + item._id());
+        xreq.setRequestHeader("Content-type", "application/json");
+        xreq.send(ko.toJSON(item._id()));
     };
 }
 
