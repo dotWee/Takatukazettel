@@ -15,7 +15,10 @@ function items(request, response) {
 
 function find(request, response) {
   const id = request.swagger.params.id.value;
-  Zettel.find(id, function (err, item) {
+
+  Zettel.findOne({
+    _id: id
+  }, function (err, item) {
 
     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
     if (err) {
@@ -33,7 +36,7 @@ function save(request, response) {
     user: request.body.user
   });
 
-  item.save(function (err) {
+  item.save(function (err, item) {
     if (err) {
       console.log(err);
     } else {
@@ -49,17 +52,33 @@ function save(request, response) {
 
 function update(request, response) {
   const id = request.swagger.params.id.value;
-  if (ITEMS.has(id)) {
-    const item = ITEMS.get(id);
-    const itemUpdate = request.body;
-    ITEMS.set(id, itemUpdate);
+
+  Zettel.findOne({
+    _id: id
+  }, function (err, item) {
+
+    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    if (err) {
+      res.status(204).send(err);
+    }
+
+    // update item
+    item.title = request.body.title;
+    item.title = request.body.user;
+    item.save(function (err, item) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('saved item with title ' + item.title);
+      }
+    });
+
+    // return item as json
     response.json({
       success: 1,
       description: 'Item updated',
     });
-  } else {
-    response.status(204).send();
-  }
+  });
 }
 
 function remove(request, response) {

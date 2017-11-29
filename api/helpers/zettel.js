@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 
-var Item = mongoose.model('Item', {
+var itemSchema = mongoose.Schema({
     title: String,
     user: String,
 });
+
+var Item = mongoose.model('Item', itemSchema);
