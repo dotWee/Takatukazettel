@@ -25,12 +25,6 @@ paths:
       description: Returns all items
       # used as the method name of the controller
       operationId: items
-      parameters:
-        - name: user
-          in: query
-          description: Only return items by a specific user
-          required: false
-          type: string
       responses:
         "200":
           description: Success
