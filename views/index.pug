@@ -50,8 +50,8 @@ block append content
                         th(scope='col') Title
                         th(scope='col') User
                         th(scope='col')
-                tbody
-                    tr(data-bind='foreach: items')
+                tbody(data-bind='foreach: items')
+                    tr
                         th(data-bind='text: $index')
                         td(data-bind='text: title')
                         td(data-bind='text: user')
