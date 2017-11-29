@@ -19,12 +19,17 @@ block append content
                     .col
                         h4.card-title Set user
                     .col-auto
-                        button.btn.btn-outline-secondary(type='button', href='#') Save
+                        button.btn.btn-outline-primary(type='button', href='#') Save
                 .row
                     .col
                         .form-group
                             label(for='inputUser') Your name
-                            input#inputUser.form-control(type='text', aria-describedby='usernameHelp', placeholder='Name')
+                            input#inputUser.form-control(type='text', placeholder='User name')
+                .row
+                    .col
+                        .form-group
+                            label(for='inputTitle') New item
+                            input#inputTitle.form-control(type='text', placeholder='Item title')
     
     // All items content
     .col-lg-8.col-sm-8.mt-3
