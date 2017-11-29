@@ -1,14 +1,16 @@
 extends layout.pug
 
-block append head
-    // Index main
-    script(src='/public/js/index.ko.js')
-    // Custom styles
+block append css
+    // Custom style
     style.
         .table>tbody>tr>td,
         .table>tbody>tr>th {
         vertical-align: middle;
         }
+
+block append js
+    // Knockout js index model
+    script(src='/public/js/index.ko.js')
 
 block append content
     // Set users name
