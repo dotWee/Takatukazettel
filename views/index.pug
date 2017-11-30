@@ -44,8 +44,11 @@ block append content
                 .row
                     .col
                         h4.card-title All items
-                    .col-auto
+                    .col-auto.d-none.d-sm-none.d-md-block
                         button.btn.btn-outline-success(type='button', href='#') Alle Erledigt
+                .row.d-block.d-sm-block.d-md-none
+                    .col
+                        button.btn.btn-outline-success.w-100(type='button', href='#') Alle Erledigt
             table.table.table-hover.h-100.m-0
                 thead
                     tr
