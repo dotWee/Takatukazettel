@@ -45,10 +45,21 @@ block append content
                     .col
                         h4.card-title All items
                     .col-auto.d-none.d-sm-none.d-md-block
-                        button.btn.btn-outline-success(type='button', href='#') Alle Erledigt
+                        button.btn.btn-outline-success(type='button', href='#' data-toggle='modal', data-target='#modalConfirmAllDone') All done
                 .row.d-block.d-sm-block.d-md-none
                     .col
-                        button.btn.btn-outline-success.w-100(type='button', href='#') Alle Erledigt
+                        button.btn.btn-outline-success.w-100(type='button', href='#' data-toggle='modal', data-target='#modalConfirmAllDone') All done
+                // Confirm modal
+                #modalConfirmAllDone.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalConfirmAllDoneLabel', aria-hidden='true')
+                    .modal-dialog.modal-sm(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#modalConfirmAllDoneLabel.modal-title Mark all items as done?
+                                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                    span(aria-hidden='true') ×
+                            .modal-footer
+                                button.btn.btn-secondary(type='button', data-dismiss='modal') Cancel
+                                button.btn.btn-primary(type='button' data-bind='click: removeAllItems()') Yes
             table.table.table-hover.h-100.m-0
                 thead
                     tr
@@ -72,3 +83,8 @@ block append content
                             button.btn.btn-success.m-2.float-right(type='button', data-bind='click: $parent.removeItem') Done
             .card-footer
                 a(href='#', data-bind='click: refreshList()') Refresh
+    .col
+        // Button trigger modal
+        button.btn.btn-primary(type='button', data-toggle='modal', data-target='#modalConfirmAllDone')
+            | Launch demo modal
+

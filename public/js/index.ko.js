@@ -68,6 +68,13 @@ function IndexModel() {
         xreq.setRequestHeader("Content-type", "application/json");
         xreq.send(ko.toJSON(item._id()));
     };
+
+    self.removeAllItems = function () {
+        console.log("Delete all items");
+        self.items().forEach(function(item) {
+            self.removeItem(item);
+        });
+    };
 }
 
 var localModel = new IndexModel();

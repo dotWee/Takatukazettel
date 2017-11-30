@@ -19,13 +19,14 @@ html(lang='en')
                 script(src='/bower_components/knockout/dist/knockout.js')
     
     body
-        // Navbar
-        nav.navbar.navbar-light.bg-light
-            a.navbar-brand(href='#') Takatukazettel
-            #navbarNav
-                ul.navbar-nav
-                    li.nav-item
-                        a.nav-link(href='/items') API
-        .container
-            .row.align-items-start
-                block content
+        block body
+            // Navbar
+            nav.navbar.navbar-light.bg-light
+                a.navbar-brand(href='#') Takatukazettel
+                #navbarNav
+                    ul.navbar-nav
+                        li.nav-item
+                            a.nav-link(href='/items') API
+            .container
+                .row.align-items-start
+                    block content
