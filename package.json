@@ -2,10 +2,10 @@
   "name": "takatukazettel",
   "version": "0.0.1",
   "private": true,
-  "description": "New Swagger API Project",
+  "description": "Minimal Node.js todo-list application, built with MongoDB, Swagger, Knockout.js and Bootstrap.",
   "keywords": [],
-  "author": "",
-  "license": "",
+  "author": "Lukas Wolfsteiner <lukas@wolfsteiner.de>",
+  "license": "MIT",
   "main": "app.js",
   "dependencies": {
     "eslint": "^4.12.0",
