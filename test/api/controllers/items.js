@@ -25,7 +25,7 @@ describe('controllers', () => {
           id: '9780201485677',
           title: 'Refactoring: Improving the Design of Existing Code',
           user: 'Martin Fowler'
-        }
+        };
         request(server)
           .get(`/items/${expectedItem.id}`)
           .set('Accept', 'application/json')
