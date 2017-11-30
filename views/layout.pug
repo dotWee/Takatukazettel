@@ -20,17 +20,12 @@ html(lang='en')
     
     body
         // Navbar
-        nav.navbar.navbar-expand-sm.navbar-light.bg-light
+        nav.navbar.navbar-light.bg-light
             a.navbar-brand(href='#') Takatukazettel
-            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-                span.navbar-toggler-icon
-            #navbarNav.collapse.navbar-collapse
+            #navbarNav
                 ul.navbar-nav
                     li.nav-item
-                        a.nav-link(href='#') Home
-                        span.sr-only (current)
-                    li.nav-item
-                        a.nav-link(href='/items') Api
+                        a.nav-link(href='/items') API
         .container
             .row.align-items-start
                 block content
