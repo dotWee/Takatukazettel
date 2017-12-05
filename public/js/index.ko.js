@@ -16,6 +16,7 @@ function ItemModel(data) {
 function IndexModel() {
     var self = this;
 
+    self.binded = false;
     self.items = ko.observableArray([]);
     self.currentItem = ko.observable(new ItemModel());
 
@@ -36,7 +37,11 @@ function IndexModel() {
             }, this);
 
             console.log("Loaded " + self.items().length + " items into the view");
-            ko.applyBindings(self);
+            
+            if (!self.binded) {
+                ko.applyBindings(self);
+                self.binded = true;
+            }
         });
         xreq.open("GET", endpoint + endpointParam);
         xreq.setRequestHeader("Content-type", "application/json");
