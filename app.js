@@ -23,13 +23,16 @@ var config = {
   appRoot: __dirname 
 };
 
-// connect to database
-mongoose.connect(database.localUrl);
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('connected to database');
-});
+// connect to mongo database or use in-memory
+if (database.useMongoDb) {
+
+  mongoose.connect(database.localUrl);
+  var db = mongoose.connection;
+  db.on('error', console.error.bind(console, 'connection error:'));
+  db.once('open', function() {
+    console.log('connected to database');
+  });
+}
 
 // setup swagger
 SwaggerExpress.create(config, function (err, swaggerExpress) {
