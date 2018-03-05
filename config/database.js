@@ -1,4 +1,4 @@
 module.exports = {
-    useMongoDb: true,
+    useMongoDb: false,
     localUrl: 'mongodb://localhost/takatukazettel',
 };
