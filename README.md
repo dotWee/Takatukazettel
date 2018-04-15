@@ -1,26 +1,27 @@
 # Takatukazettel
 
-Minimal todo-list application, built with [MongoDB](https://www.mongodb.com/), [Swagger](https://swagger.io/), [Knockout.js](http://knockoutjs.com/) and [Bootstrap 4](https://getbootstrap.com/).
+Minimal todo-list application, built with [MongoDB](https://www.mongodb.com/), [Swagger](https://swagger.io/), [Knockout.js](http://knockoutjs.com/) and [Bootstrap 4](https://getbootstrap.com/). And it runs within a [Docker](https://www.docker.com/) container.
 
 This is my first Node.js application. Recruiters: Please don't look at it.
 
-## Running locally
+## Execution
 
-Make sure you have Node.js installed und a instance of MongoDB running.
+Make sure you have [Docker](https://www.docker.com/) installed and running.
 
     git clone git@github.com:dotWee/Takatukazettel.git
     cd Takatukazettel
-    npm install -g swagger
-    npm install
-    bower update
-    swagger project start
+    
+Don't forget to update the _MONGO_URL_ variable within the Dockerfile!
 
-Takatukazettel should now be running on [localhost:10010](http://localhost:10010/) and should look like this:
+    docker-compose up --build
 
-| On Mobile | On Desktop |
-|-----------|------------|
-| ![Mobile](docs/Mobile.jpeg) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FdotWee%2FTakatukazettel.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FdotWee%2FTakatukazettel?ref=badge_shield)
-| ![Desktop](docs/Desktop.jpeg) |
+Takatukazettel should now be running on [localhost:10010](http://localhost:10010/).
+
+## Api
+
+Swagger:
+
+The API follows the REST structure and has been developed using [Swagger](https://swagger.io/). You can check out details about the Swagger configuration on [SwaggerHub](https://app.swaggerhub.com/apis/dotWee/Takatukazettel).
 
 ## License
 

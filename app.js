@@ -26,7 +26,7 @@ var config = {
 // connect to mongo database or use in-memory
 if (database.useMongoDb) {
 
-  mongoose.connect(database.localUrl);
+    mongoose.connect(process.env.MONGO_URL);
   var db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', function() {

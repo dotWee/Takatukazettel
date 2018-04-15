@@ -36,7 +36,7 @@ function find(request, response) {
 }
 
 function mongoFind(request, response) {
-  const id = request.swagger.params.id.value;
+    let id = request.swagger.params.id.value;
 
   Item.findOne({
     _id: id
@@ -61,7 +61,7 @@ function save(request, response) {
 }
 
 function mongoSave(request, response) {
-  var item = new Item({
+    let item = new Item({
     title: request.body.title,
     user: request.body.user
   });
@@ -88,7 +88,7 @@ function update(request, response) {
 }
 
 function mongoUpdate(request, response) {
-  const id = request.swagger.params.id.value;
+    let id = request.swagger.params.id.value;
 
   Item.findOne({
     _id: id
@@ -133,7 +133,7 @@ function remove(request, response) {
 }
 
 function mongoRemove(request, response) {
-  const id = request.swagger.params.id.value;
+    let id = request.swagger.params.id.value;
 
   Item.remove({ _id: id }, function (err) {
     if (err) response.status(204).send(err);
