@@ -10,6 +10,9 @@ Make sure you have [Docker](https://www.docker.com/) installed and running.
 
     git clone git@github.com:dotWee/Takatukazettel.git
     cd Takatukazettel
+    
+Don't forget to update the _MONGO_URL_ variable within the Dockerfile!
+
     docker-compose up --build
 
 Takatukazettel should now be running on [localhost:10010](http://localhost:10010/).
