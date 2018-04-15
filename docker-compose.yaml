@@ -1,0 +1,26 @@
+version: "2"
+services:
+  varasto:
+    container_name: varasto
+    restart: always
+    build: .
+    ports:
+      - 10010:10010
+    links:
+      - mongo
+    networks:
+      - varastonet
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - varastonet
+networks:
+  varastonet:
+    driver: bridge
