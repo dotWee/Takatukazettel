@@ -19,7 +19,8 @@ Takatukazettel should now be running on [localhost:10010](http://localhost:10010
 
 | On Mobile | On Desktop |
 |-----------|------------|
-| ![Mobile](docs/Mobile.jpeg) | ![Desktop](docs/Desktop.jpeg) |
+| ![Mobile](docs/Mobile.jpeg) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FdotWee%2FTakatukazettel.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FdotWee%2FTakatukazettel?ref=badge_shield)
+| ![Desktop](docs/Desktop.jpeg) |
 
 ## License
 
@@ -44,3 +45,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FdotWee%2FTakatukazettel.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FdotWee%2FTakatukazettel?ref=badge_large)
