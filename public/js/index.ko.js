@@ -1,4 +1,4 @@
-let endpoint = "/items";
+var endpoint = "/items";
 
 function ItemModel(data) {
     var self = this;
@@ -20,11 +20,15 @@ function IndexModel() {
     self.items = ko.observableArray([]);
     self.currentItem = ko.observable(new ItemModel());
 
+    // Clear list
+    self.clearList = function () {
+        self.items.removeAll();
+    };
+
     // Load items
     self.refreshList = function (endpointParam = "") {
 
-        // Clear old array
-        self.items.removeAll();
+        self.clearList();
 
         var xreq = new XMLHttpRequest();
         xreq.addEventListener("load", function (data) {
@@ -74,7 +78,7 @@ function IndexModel() {
         xreq.send(ko.toJSON(item._id()));
     };
 
-    self.removeAllItems = function () {
+    self.removeAll = function () {
         console.log("Delete all items");
         self.items().forEach(function(item) {
             self.removeItem(item);
