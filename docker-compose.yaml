@@ -1,6 +1,6 @@
 version: "2"
 services:
-  varasto:
+  takatukazettel:
     container_name: takatukazettel
     restart: always
     build: .
