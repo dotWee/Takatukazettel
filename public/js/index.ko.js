@@ -41,7 +41,7 @@ function IndexModel() {
             }, this);
 
             console.log("Loaded " + self.items().length + " items into the view");
-            
+
             if (!self.binded) {
                 ko.applyBindings(self);
                 self.binded = true;
@@ -69,7 +69,7 @@ function IndexModel() {
     self.removeItem = function (item) {
         console.log("Delete item with id " + item._id());
         var xreq = new XMLHttpRequest();
-        
+
         xreq.addEventListener("load", function (data) {
             self.items.destroy(item);
         });
@@ -80,7 +80,7 @@ function IndexModel() {
 
     self.removeAll = function () {
         console.log("Delete all items");
-        self.items().forEach(function(item) {
+        self.items().forEach(function (item) {
             self.removeItem(item);
         });
     };

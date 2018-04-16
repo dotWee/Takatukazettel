@@ -3,9 +3,9 @@ extends layout.pug
 block append css
     // Custom style
     style.
-        .table>tbody>tr>td,
-        .table>tbody>tr>th {
-        vertical-align: middle;
+        .table > tbody > tr > td,
+        .table > tbody > tr > th {
+            vertical-align: middle;
         }
 
 block append js
@@ -36,7 +36,7 @@ block append content
                     .row.d-block.d-sm-block.d-md-none.mt-3
                         .col
                             button.btn.btn-outline-primary.w-100(type='submit') Save                            
-    
+
     // All items card
     .col-lg-8.col-sm-8.mt-3
         .card
@@ -63,14 +63,14 @@ block append content
             table.table.table-hover.h-100.m-0
                 thead
                     tr
-                        th(scope='col') 
+                        th(scope='col')
                             .m-2 #
-                        th(scope='col') 
+                        th(scope='col')
                             .m-2 Title
-                        th(scope='col') 
+                        th(scope='col')
                             .m-2 User
                         th(scope='col')
-                            .m-2 
+                            .m-2
                 tbody(data-bind='foreach: items')
                     tr
                         th
