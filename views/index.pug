@@ -27,12 +27,12 @@ block append content
                         .col
                             .form-group
                                 label(for='inputUser') Your name
-                                input#inputUser.form-control(type='text', placeholder='User name', data-bind='value: currentItem().user', required)
+                                input#inputUser.form-control(type='text', data-bind='value: currentItem().user', required)
                     .row
                         .col
                             .form-group.mb-0
                                 label(for='inputTitle') New item
-                                input#inputTitle.form-control(type='text', placeholder='Item title', data-bind='value: currentItem().title', required)
+                                input#inputTitle.form-control(type='text', data-bind='value: currentItem().title', required)
                     .row.d-block.d-sm-block.d-md-none.mt-3
                         .col
                             button.btn.btn-outline-primary.w-100(type='submit') Save                            
