@@ -1,4 +1,4 @@
-var endpoint = "/items";
+var endpoint = "/api/items";
 
 function ItemModel(data) {
     var self = this;

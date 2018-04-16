@@ -47,7 +47,7 @@ SwaggerExpress.create(config, function (err, swaggerExpress) {
   app.listen(port);
 
   if (swaggerExpress.runner.swagger.paths['/items']) {
-    console.log('try this:\ncurl http://localhost:' + port + '/items');
+      console.log('try this:\ncurl http://localhost:' + port + '/api/items');
   }
 
   app.get('/', function(req, res) {
