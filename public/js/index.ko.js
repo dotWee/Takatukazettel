@@ -83,6 +83,7 @@ function IndexModel() {
         self.items().forEach(function (item) {
             self.removeItem(item);
         });
+        self.refreshList();
     };
 }
 
