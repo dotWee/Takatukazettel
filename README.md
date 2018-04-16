@@ -15,7 +15,9 @@ Don't forget to update the _MONGO_URL_ variable within the Dockerfile!
 
     docker-compose up --build
 
-Takatukazettel should now be running on [localhost:10010](http://localhost:10010/).
+Takatukazettel should now be running on [localhost:10010](http://localhost:10010/) and look like this:
+
+![Screenshot](docs/Screenshot.png "Screenshot")
 
 ## Api
 
