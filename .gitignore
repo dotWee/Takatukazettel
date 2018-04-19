@@ -110,3 +110,6 @@ db/
 
 # MongoDB database
 data/
+
+# MacOS specific files
+*.DS_Store
