@@ -22,5 +22,5 @@ services:
     networks:
       - takatukanet
 networks:
-  varastonet:
+  takatukanet:
     driver: bridge
