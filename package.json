@@ -1,6 +1,6 @@
 {
   "name": "takatukazettel",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Minimal Node.js todo-list application, built with MongoDB, Swagger, Knockout.js and Bootstrap.",
   "keywords": [],
@@ -13,6 +13,7 @@
     "express": "^4.12.3",
     "jshint": "^2.9.5",
     "mongoose": "^4.13.5",
+    "npm": "^5.8.0",
     "pug": "^2.0.0-rc.4",
     "swagger-express-mw": "^0.1.0"
   },
