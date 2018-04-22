@@ -1,7 +1,7 @@
 version: "2"
 services:
-  varasto:
-    container_name: varasto
+  takatukazettel:
+    container_name: takatukazettel
     restart: always
     build: .
     ports:
@@ -9,7 +9,7 @@ services:
     links:
       - mongo
     networks:
-      - varastonet
+      - takatukanet
     depends_on:
       - mongo
   mongo:
@@ -20,7 +20,7 @@ services:
     ports:
       - 27017:27017
     networks:
-      - varastonet
+      - takatukanet
 networks:
-  varastonet:
+  takatukanet:
     driver: bridge

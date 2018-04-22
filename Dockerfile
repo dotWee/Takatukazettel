@@ -5,5 +5,6 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 COPY . /usr/src/app
 RUN npm install
+RUN bower update
 EXPOSE 10010
 CMD [ "npm", "start" ]

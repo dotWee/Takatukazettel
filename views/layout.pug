@@ -6,17 +6,20 @@ html(lang='en')
             meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
             meta(name='description', content='')
             meta(name='author', content='')
+            link(rel='icon', href='/public/img/favicon.png', type='image/png')
             title Takatukazettel
             block css
                 // Bootstrap core
-                link(rel='stylesheet', href='/public/css/bootstrap.min.css')
+                link(rel='stylesheet', href='/public/css/bootstrap.css')
+                link(rel='stylesheet', href='/public/css/bootstrap-grid.css')
+                link(rel='stylesheet', href='/public/css/bootstrap-reboot.css')
             block js
                 // Bootstrap js
-                script(src='/public/js/bootstrap.bundle.min.js')
-                script(src='/public/js/bootstrap.min.js')
+                script(src='/public/js/bootstrap.bundle.js')
+                script(src='/public/js/bootstrap.js')
                 // Knockout js
                 script(src='/bower_components/knockout/dist/knockout.js')
-    
+
     body
         block body
             // Navbar
@@ -25,7 +28,7 @@ html(lang='en')
                 #navbarNav
                     ul.navbar-nav
                         li.nav-item
-                            a.nav-link(href='/items') API
+                            a.nav-link(href='/api/items') API
             .container
                 .row.align-items-start
                     block content
