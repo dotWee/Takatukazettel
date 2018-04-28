@@ -11,9 +11,10 @@ var database = require('./config/database');
 // set view engine
 app.set("view engine", "pug");
 
-// enable bower
+// make static sources accessible
 app.use('/public', express.static(__dirname + '/public'));
-app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use(express.static(__dirname + '/node_modules/knockout/build/output'));
 
 // for testing
 module.exports = app;
