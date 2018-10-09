@@ -18,13 +18,13 @@ Takatukazettel should now be running on [localhost:10010](http://localhost:10010
 
 Swagger:
 
-The API follows the REST structure and has been developed using [Swagger](https://swagger.io/). You can check out details about the Swagger configuration on [SwaggerHub](https://app.swaggerhub.com/apis/dotWee/Takatukazettel).
+The API follows the RESTful structure and has been developed using [Swagger](https://swagger.io/). You can check out details about the Swagger configuration on [SwaggerHub](https://app.swaggerhub.com/apis/dotWee/Takatukazettel).
 
 ## License
 
 The MIT License
 
-Copyright (c) 2010-2017 Lukas "dotwee" Wolfsteiner
+Copyright (c) 2010-2017 Lukas "dotWee" Wolfsteiner
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -43,6 +43,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FdotWee%2FTakatukazettel.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FdotWee%2FTakatukazettel?ref=badge_large)
