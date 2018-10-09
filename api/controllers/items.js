@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var databaseConfig = require('../../config/database');
 
 var itemSchema = mongoose.Schema({
     title: String,
@@ -9,11 +8,6 @@ var itemSchema = mongoose.Schema({
 var Item = mongoose.model('Item', itemSchema);
 
 function items(request, response) {
-    if (databaseConfig.useMongoDb) mongoItems(request, response);
-    else inmemItems(request, response);
-}
-
-function mongoItems(request, response) {
     Item.find(function (err, items) {
 
         // if there is an error retrieving, send the error. nothing after response.send(err) will execute
@@ -26,16 +20,7 @@ function mongoItems(request, response) {
     });
 }
 
-function inmemItems(request, response) {
-
-}
-
 function find(request, response) {
-    if (databaseConfig.useMongoDb) mongoFind(request, response);
-    else inmemFind(request, response);
-}
-
-function mongoFind(request, response) {
     let id = request.swagger.params.id.value;
 
     Item.findOne({
@@ -52,16 +37,7 @@ function mongoFind(request, response) {
     });
 }
 
-function inmemFind(request, response) {
-
-}
-
 function save(request, response) {
-    if (databaseConfig.useMongoDb) mongoSave(request, response);
-    else inmemSave(request, response);
-}
-
-function mongoSave(request, response) {
     let item = new Item({
         title: request.body.title,
         user: request.body.user
@@ -80,16 +56,7 @@ function mongoSave(request, response) {
     });
 }
 
-function inmemSave(request, response) {
-
-}
-
 function update(request, response) {
-    if (databaseConfig.useMongoDb) mongoUpdate(request, response);
-    else inmemUpdate(request, response);
-}
-
-function mongoUpdate(request, response) {
     let id = request.swagger.params.id.value;
 
     Item.findOne({
@@ -126,16 +93,7 @@ function mongoUpdate(request, response) {
     });
 }
 
-function inmemUpdate(request, response) {
-
-}
-
 function remove(request, response) {
-    if (databaseConfig.useMongoDb) mongoRemove(request, response);
-    else inmemRemove(request, response);
-}
-
-function mongoRemove(request, response) {
     let id = request.swagger.params.id.value;
 
     Item.remove({_id: id}, function (err) {
@@ -145,10 +103,6 @@ function mongoRemove(request, response) {
             description: 'Item deleted',
         });
     });
-}
-
-function inmemRemove(request, response) {
-
 }
 
 module.exports = {

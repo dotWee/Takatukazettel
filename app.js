@@ -6,7 +6,6 @@ var mongoose = require('mongoose');
 var pug = require('pug');
 var express = require('express');
 var app = express();
-var database = require('./config/database');
 
 // set view engine
 app.set("view engine", "pug");
@@ -24,16 +23,13 @@ var config = {
     appRoot: __dirname
 };
 
-// connect to mongo database or use in-memory
-if (database.useMongoDb) {
-
-    mongoose.connect(process.env.MONGO_URL);
+// connect to mongo database
+mongoose.connect(process.env.MONGO_URL);
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
         console.log('connected to database');
     });
-}
 
 // setup swagger
 SwaggerExpress.create(config, function (err, swaggerExpress) {
