@@ -12,6 +12,11 @@ services:
       - takatukanet
     depends_on:
       - mongo
+    expose:
+      - 10010
+    environment:
+      WAIT_HOSTS: mongo:27017
+      MONGO_URL: mongodb://mongo/takatukazettel
   mongo:
     container_name: mongo
     image: mongo

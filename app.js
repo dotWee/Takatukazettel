@@ -6,14 +6,14 @@ var mongoose = require('mongoose');
 var pug = require('pug');
 var express = require('express');
 var app = express();
-var database = require('./config/database');
 
 // set view engine
 app.set("view engine", "pug");
 
-// enable bower
+// make static sources accessible
 app.use('/public', express.static(__dirname + '/public'));
-app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use(express.static(__dirname + '/node_modules/knockout/build/output'));
 
 // for testing
 module.exports = app;
@@ -23,16 +23,13 @@ var config = {
     appRoot: __dirname
 };
 
-// connect to mongo database or use in-memory
-if (database.useMongoDb) {
-
-    mongoose.connect(process.env.MONGO_URL);
+// connect to mongo database
+mongoose.connect(process.env.MONGO_URL);
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
         console.log('connected to database');
     });
-}
 
 // setup swagger
 SwaggerExpress.create(config, function (err, swaggerExpress) {
