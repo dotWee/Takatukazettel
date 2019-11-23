@@ -26,7 +26,7 @@ block append content
                     .row
                         .col
                             .form-group
-                                label(for='inputUser') Name
+                                label(for='inputUser') User
                                 input#inputUser.form-control(type='text', data-bind='value: currentItem().user', required)
                     .row
                         .col
@@ -54,7 +54,7 @@ block append content
                         th(scope='col')
                             .m-2 Title
                         th(scope='col')
-                            .m-2 Name
+                            .m-2 User
                         th(scope='col')
                             .m-2
                 tbody(data-bind='foreach: items')
