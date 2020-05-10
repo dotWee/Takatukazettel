@@ -21,7 +21,7 @@
   "devDependencies": {
     "eslint-config-google": "^0.9.1",
     "should": "^7.1.0",
-    "supertest": "^3.3.0"
+    "supertest": "^3.4.2"
   },
   "scripts": {
     "start": "node app.js",
