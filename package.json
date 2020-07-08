@@ -13,7 +13,7 @@
     "express": "^4.17.1",
     "jshint": "^2.11.1",
     "knockout": "^3.5.1",
-    "mongoose": "^5.9.20",
+    "mongoose": "^5.9.22",
     "npm": "^6.14.5",
     "pug": "^2.0.4",
     "swagger-express-mw": "^0.7.0"
