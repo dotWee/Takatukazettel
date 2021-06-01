@@ -11,7 +11,7 @@
     "bootstrap": "^4.5.3",
     "eslint": "^5.16.0",
     "express": "^4.17.1",
-    "jshint": "^2.12.0",
+    "jshint": "^2.13.0",
     "knockout": "^3.5.1",
     "mongoose": "^5.11.17",
     "npm": "^6.14.11",
