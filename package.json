@@ -10,7 +10,7 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "eslint": "^5.16.0",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "jshint": "^2.13.0",
     "knockout": "^3.5.1",
     "mongoose": "^5.12.14",
